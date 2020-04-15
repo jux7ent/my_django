@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% load static %}
+    {% if images %}
+        <ul>
+        {% for img in images %}
+            {% static "images/" as static_var %}
+            <img src="{{ static_var }}{{ folder_name }}/{{ img }}">
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+
+
+</body>
+</html>
